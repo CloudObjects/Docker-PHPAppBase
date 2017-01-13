@@ -9,8 +9,9 @@ RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # Install all required packages through yum
 RUN yum install -y --exclude=httpd --skip-broken lighttpd lighttpd-fastcgi \
-  php70w php70w-opcache php70w-common php70w-pecl-apcu php70w-pdo php70w-mysql \
-  php70w-xml php70w-mbstring php70w-gd php70w-pecl-redis unzip
+  php56w php56w-opcache php56w-common php56w-pecl-apcu php56w-pdo php56w-mysql \
+  php56w-xml php56w-mbstring php56w-gd php56w-pecl-redis php56w-pecl-gearman \
+  libgearman unzip
 
 # Add configuration files
 ADD lighttpd.conf.php /tmp/
