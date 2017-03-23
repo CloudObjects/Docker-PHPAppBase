@@ -4,7 +4,7 @@ MAINTAINER "Lukas Rosenstock"
 # Enable EPEL repository (required for lighttpd)
 RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-# Enable Webtatic repository (required for PHP7)
+# Enable Webtatic repository
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # Install all required packages through yum
