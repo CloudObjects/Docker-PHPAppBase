@@ -55,7 +55,9 @@ mimetype.assign  = (
   ".png"          =>      "image/png",
   ".css"          =>      "text/css",
   ".js"           =>      "text/javascript",
-  ".svg"          =>      "image/svg+xml"
+  ".svg"          =>      "image/svg+xml",
+  ".htm"	  =>	  "text/html",
+  ".html"	  =>	  "text/html"
 )
 
 # Solve problem with 417 errors

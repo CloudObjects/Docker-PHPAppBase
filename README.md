@@ -18,11 +18,11 @@ The image is created as an _automated build_ on the Docker Hub. At the time of w
 
 ### Mounting external source
 
-    docker run cloudobjects/php-app-base -p 80:80 -v /path/to/source:/var/www/app
+    docker run -p 80:80 -v /path/to/source:/var/www/app cloudobjects/php-app-base
 
 ### Deploying application from ZIP file
 
-    docker run cloudobjects/php-app-base -p 80:80 -e PACKAGE_ZIP_URL=http://example.com/source.zip
+    docker run -p 80:80 -e PACKAGE_ZIP_URL=http://example.com/source.zip cloudobjects/php-app-base
 
 ### Building new image
 
