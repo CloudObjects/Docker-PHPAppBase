@@ -11,8 +11,8 @@ The directory structure of a PHP app compatible with this container should have 
 The image is created as an _automated build_ on the Docker Hub. At the time of writing, the latest image contains:
 
 * CentOS 7
-* [lighttpd 1.4.45](https://www.lighttpd.net/2017/1/14/1.4.45/) with mod\_fastcgi and mod\_rewrite (installed from EPEL)
-* PHP 7.0.16 with opcache, pecl-apcu, pdo, mysql, xml, mbstring, gd, pecl-redis, soap (installed from [Webtatic](https://webtatic.com))
+* [lighttpd 1.4.49](https://www.lighttpd.net/2017/1/14/1.4.45/) with mod\_fastcgi and mod\_rewrite (installed from EPEL)
+* PHP 7.2.6 with opcache, pecl-apcu, pdo, mysql, xml, mbstring, gd, pecl-redis, soap (installed from [Webtatic](https://webtatic.com))
 
 ## How to run
 
