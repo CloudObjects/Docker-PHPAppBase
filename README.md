@@ -12,22 +12,22 @@ The image is created as an _automated build_ on the Docker Hub. At the time of w
 
 * CentOS 7
 * [lighttpd 1.4.49](https://www.lighttpd.net/2017/1/14/1.4.45/) with mod\_fastcgi and mod\_rewrite (installed from EPEL)
-* PHP 7.2.6 with opcache, pecl-apcu, pdo, mysql, xml, mbstring, gd, pecl-redis, soap (installed from [Webtatic](https://webtatic.com))
+* PHP 7.1.20 with opcache, pecl-apcu, pdo, mysql, xml, mbstring, gd, pecl-redis, soap (installed from [Webtatic](https://webtatic.com))
 
 ## How to run
 
 ### Mounting external source
 
-    docker run -p 80:80 -v /path/to/source:/var/www/app cloudobjects/php-app-base
+    docker run -p 80:80 -v /path/to/source:/var/www/app cloudobjects/php-app-base:7.1
 
 ### Deploying application from ZIP file
 
-    docker run -p 80:80 -e PACKAGE_ZIP_URL=http://example.com/source.zip cloudobjects/php-app-base
+    docker run -p 80:80 -e PACKAGE_ZIP_URL=http://example.com/source.zip cloudobjects/php-app-base:7.1
 
 ### Building new image
 
     # Dockerfile
-    FROM cloudobjects/php-app-base
+    FROM cloudobjects/php-app-base:7.1
     ADD / /var/www/app/
 
 ## Advanced configuration
