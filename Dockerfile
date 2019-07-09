@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER "Lukas Rosenstock"
+LABEL maintainer="Lukas Rosenstock"
 
 # Enable EPEL repository (required for lighttpd)
 RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
