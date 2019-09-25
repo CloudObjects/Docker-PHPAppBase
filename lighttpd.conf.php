@@ -56,6 +56,7 @@ mimetype.assign  = (
   ".css"          =>      "text/css",
   ".js"           =>      "text/javascript",
   ".svg"          =>      "image/svg+xml",
+  ".pdf"          =>      "application/pdf",
   ".htm"	  =>	  "text/html",
   ".html"	  =>	  "text/html"
 )
