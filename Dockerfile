@@ -14,6 +14,7 @@ RUN yum install -y --exclude=httpd --skip-broken lighttpd lighttpd-fastcgi \
 
 # Add configuration files
 ADD lighttpd.conf.php /tmp/
+ADD php.ini /etc/
 
 # Open HTTP Port
 EXPOSE 80
