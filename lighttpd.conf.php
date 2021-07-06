@@ -26,7 +26,7 @@ server.tag                 = "lighttpd"
 accesslog.filename          = "/var/log/lighttpd/access.log"
 
 ## to help the rc.scripts
-server.pid-file            = "/var/run/lighttpd.pid"
+server.pid-file            = "/run/lighttpd.pid"
 
 # change uid to <uid> (default: don't care)
 server.username            = "lighttpd"
@@ -36,7 +36,7 @@ server.groupname           = "lighttpd"
 ## FastCGI Configuration
 fastcgi.server = ( ".php" => (
 	"localhost" => (
-			"socket" => "/var/run/lighttpd/php-fastcgi.socket",
+			"socket" => "/run/lighttpd/php-fastcgi.socket",
 			"bin-path" => "/usr/bin/php-cgi",
 			"max_procs" => <?php echo $parentProcs; ?>,
 			"bin-environment" => (

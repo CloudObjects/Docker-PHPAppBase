@@ -1,16 +1,15 @@
-FROM centos:7
+FROM centos:8
 LABEL maintainer="Lukas Rosenstock"
 
-# Enable EPEL repository (required for lighttpd)
-RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+# Enable Remi's repository
+RUN dnf install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
-# Enable Webtatic repository (required for PHP7)
-RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+# Install PHP8 + modules
+RUN dnf module install -y php:remi-8.0 \
+  && dnf install -y php-{cli,fpm,mysqlnd,zip,devel,gd,mbstring,curl,xml,pear,bcmath,json,gmp,intl,redis,sodium}
 
-# Install all required packages through yum
-RUN yum install -y --exclude=httpd --skip-broken lighttpd lighttpd-fastcgi \
-  php72w php72w-opcache php72w-common php72w-pecl-apcu php72w-pdo php72w-mysql \
-  php72w-xml php72w-mbstring php72w-gd php72w-pecl-redis php72w-soap php72w-pecl-imagick zip unzip
+# Install lighttpd and helper modules
+RUN dnf install -y lighttpd lighttpd-fastcgi zip unzip
 
 # Add configuration files
 ADD lighttpd.conf.php /tmp/

@@ -1,7 +1,7 @@
 php /tmp/lighttpd.conf.php $PHP_PROCESS_COUNT > /etc/lighttpd/lighttpd.conf
 
 # Fix for permission issue
-mkdir -p /var/run/lighttpd
+mkdir -p /run/lighttpd
 chown lighttpd:lighttpd /var/run/lighttpd
 
 if [ -d "/var/www/app" ]; then
